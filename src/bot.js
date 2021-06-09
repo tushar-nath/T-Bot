@@ -18,6 +18,17 @@ client.on('ready', () => {
 
 client.on('message', async (message) => {
   if (message.author.bot) return;
+  if (message.content === `$ping`) {
+		message.channel.send('Pong.');
+	} else if (message.content === `$beep`) {
+		message.channel.send('Boop.');
+	}
+  if (message.content === 'hello') {
+		message.channel.send('hi, there!');
+  }
+  if (message.content === 'how are you?') {
+		message.channel.send('i am good, thanks!');
+	}
   if (message.content.startsWith(PREFIX)) {
     const [CMD_NAME, ...args] = message.content
       .trim()
