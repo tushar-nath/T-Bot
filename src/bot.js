@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const  { Client, WebhookClient } = require('discord.js');
+// const keepAlive = require("./server");
 const client = new Client({
   partials: ['MESSAGE', 'REACTION']
 });
@@ -110,5 +111,5 @@ client.on('messageReactionRemove', (reaction, user) => {
   }
 });
 
-
+// keepAlive()
 client.login(process.env.DISCORDJS_BOT_TOKEN);
