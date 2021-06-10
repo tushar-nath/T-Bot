@@ -18,10 +18,12 @@ client.on('ready', () => {
 
 client.on('message', async (message) => {
   if (message.author.bot) return;
-  if (message.content === `$ping`) {
+  if (message.content === `${prefix}ping`) {
 		message.channel.send('Pong.');
-	} else if (message.content === `$beep`) {
+	} else if (message.content === `${prefix}beep`) {
 		message.channel.send('Boop.');
+	} else if (message.content === `${prefix}server`) {
+		message.channel.send(`This server's name is: ${message.guild.name}`);
 	}
   if (message.content === 'hello') {
 		message.channel.send('hi, there!');
