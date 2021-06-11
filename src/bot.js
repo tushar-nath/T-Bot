@@ -15,19 +15,19 @@ client.on('message', message => {
     const command = args.shift().toLowerCase();
 	
 	if (command === 'help') {
-		message.channel.send('Supported commands :\n$help - Displays the help menu\n$ping - Should respond with a pong and display the latency\n$avatar - Displays the avatar of the user\n$server - Displays the name of the server\n$user-info - Displays the information of the user and its ID');
+		message.reply('good to have you here. The Supported commands are :\n\n$help - Displays the help menu\n$ping - Should respond with a pong and display the latency\n$avatar - Displays the avatar of the user\n$server - Displays the name of the server\n$user-info - Displays the information of the user and its ID\n$prune [range] - Should delete the number of messages specified in the range');
 	} else if (command === 'ping') {
 		const timeTaken = Date.now() - message.createdTimestamp;
     	message.reply(`Pong! This message had a latency of ${timeTaken}ms.`);
 	} else if (command === 'beep') {
-		message.channel.send('Boop.');
+		message.reply('Boop.');
 	} else if (command === `server`) {
-		message.channel.send(`This server's name is: ${message.guild.name}`);
+		message.reply(`This server's name is: ${message.guild.name}`);
 	} else if (command === `user-info`) {
-		message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
+		message.reply(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
 	} else if (command === 'avatar') {
 		if (!message.mentions.users.size) {
-			return message.channel.send(`Your avatar: <${message.author.displayAvatarURL({ format: 'png', dynamic: true })}>`);
+			return message.reply(`Your avatar: <${message.author.displayAvatarURL({ format: 'png', dynamic: true })}>`);
 		}
 		
 		const avatarList = message.mentions.users.map(user => {
@@ -35,6 +35,19 @@ client.on('message', message => {
 		});
 	
 		message.channel.send(avatarList);
+	} else if (command === 'prune') {
+		const amount = parseInt(args[0]) + 1;
+
+		if (isNaN(amount)) {
+			return message.reply('that doesn\'t seem to be a valid number.');
+		} else if (amount <= 1 || amount > 100) {
+			return message.reply('you need to input a number between 1 and 99.');
+		}
+
+		message.channel.bulkDelete(amount, true).catch(err => {
+			console.error(err);
+			message.channel.send('there was an error trying to prune messages in this channel!');
+		});
 	}
 });
 
