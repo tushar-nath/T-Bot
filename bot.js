@@ -1,5 +1,6 @@
 const fs = require('fs');
 const Discord = require('discord.js');
+const got = require('got');
 const config = require('./config.json');
 const client = new Discord.Client();
 const bot = new Discord.Client();
@@ -57,4 +58,4 @@ client.on('ready', () => {
 });
 
 
-client.login('');
+client.login('ODUxNTM3MDQxNDI1OTU2ODk0.YL5tqw.X7MFScpKGy911Nlvxh7kDoYUlCA');
