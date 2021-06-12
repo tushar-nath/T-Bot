@@ -58,4 +58,4 @@ client.on('ready', () => {
 });
 
 
-client.login('token');
+client.login(config.token);
