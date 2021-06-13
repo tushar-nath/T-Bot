@@ -1,6 +1,6 @@
 module.exports = {
-	name: 'prune',
-	description: 'Prune!',
+	name: 'del',
+	description: 'Delete!',
 	execute(message, args) {
 		const amount = parseInt(args[0]) + 1;
 		if (isNaN(amount)) {
