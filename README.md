@@ -6,7 +6,7 @@ A Discord bot that can say jokes, post memes and do a lot of other cool stuff !
 
 ## Using This Bot
 
-To invite your bot to your server, click [here] https://discord.com/oauth2/authorize?client_id=851537041425956894&permissions=3224894529&scope=bot
+To invite the bot to your server, click [here] https://discord.com/oauth2/authorize?client_id=851537041425956894&permissions=3224894529&scope=bot
 
 
 ## Commands
