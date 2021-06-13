@@ -12,7 +12,7 @@ module.exports = {
         .setColor("#0099ff")
         .setTitle("T-Bot")
         .setDescription(
-          "The prefix must be typed before the command for it to work.\nThe current prefix of T-Bot is '$' without the quotations."
+          "The prefix must be typed before the command for it to work.\nThe current prefix of T-Bot is '$' without the quotations.\nBot developed by tushar-nath#0267"
         );
 
       const helpInfo = new Discord.MessageEmbed()
@@ -57,3 +57,4 @@ module.exports = {
     }
   }
 };
+
