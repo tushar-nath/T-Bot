@@ -17,8 +17,8 @@ module.exports = {
 
       const helpInfo = new Discord.MessageEmbed()
         .setColor("#0099ff")
-        .addField(":flower_playing_cards: Fun", "`meme`, `joke`, `chucknorris`, `idea`, `avatar`, `cat`, `beep`, `color`")
-        .addField(":toolbox: Utility", "`help`, `movie`, `weather`, `invite`, `user`, `server`, `ping`")
+        .addField(":flower_playing_cards: Fun", "`meme`, `joke`, `chucknorris`, `idea`, `advice` `avatar`, `cat`, `beep`, `color`")
+        .addField(":toolbox: Utility", "`help`, `movie`, `weather`, `invite`, `user`, `server`, `ping`, `prune`")
         .addField(":rocket: International Space Station API", "`isslocation`, `isspeople` ")
         .setFooter("Requested by " + message.author.username, message.author.avatarURL());
 
